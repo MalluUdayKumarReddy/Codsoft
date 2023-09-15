@@ -1,0 +1,82 @@
+package atminterfaceproject;
+
+import java.util.Scanner;
+
+public class AtmMachine {
+
+	public static void main(String[] args) {
+		// Creating the object of scanner class
+		Scanner scan = new Scanner(System.in);
+		// Asking the user enter the user total money in account
+		System.out.println("Enter the your money in account");
+		// Storing the account money in variable
+		int Accountbalance=scan.nextInt();
+		// Atm machine will display the option
+		System.out.println(" Press 1 :- Withdrawing");
+		System.out.println(" Press 2 :- Deposit");
+		System.out.println(" Press 3 :- Cheacking The Balance");
+		// Asking the user choose the option
+		System.out.println("Please select the one option:-");
+		// Storing the option in variable
+		int option=scan.nextInt();
+		// Switch condotion use perform the operation
+		switch(option) {
+		case 1 :
+			// Calling the method withdrawing
+			Userbalance.withdrawing(Accountbalance);
+			   break;
+		case 2 :
+			// Calling the method deposit
+			Userbalance.deposit(Accountbalance);
+			break;
+		case 3 :
+			// Calling the method cheack balance
+			Userbalance.cheackbalance(Accountbalance);
+		}
+	}
+
+}
+package atminterfaceproject;
+
+import java.util.Scanner;
+
+public class Userbalance {
+	// Creating the withdrawing t=method
+	public static void withdrawing(int Accountbalance) {
+        // Creating the object of scanner class
+		Scanner scan = new Scanner(System.in);
+		// Asking the user enter withdraw amount
+		System.out.println(" Enter Amount that you are withdrawing");
+		// Storing the withdraw amount in variable
+		int withdrawing = scan.nextInt();
+		// If condition cheacking the amount
+		if (Accountbalance >= withdrawing) {
+			Accountbalance = Accountbalance - withdrawing;
+			int remain = Accountbalance - withdrawing;
+			// Printing the output
+			System.out.println("Please collect your money");
+			System.out.println("Remaining balance is :" + (remain + withdrawing));
+		} else {
+			System.out.println(" Insufficient funds");
+		}
+	}
+    //Creating the deposit method
+	public static void deposit(int Accountbalance) {
+        // Creating the object of scanner class
+		Scanner scan = new Scanner(System.in);
+		// Asking the user enter the deposit amount
+		System.out.println(" Enter the deposit money");
+		// Storing the value into variable
+		int deposit = scan.nextInt();
+		// Deposting the money into account
+		Accountbalance = Accountbalance + deposit;
+		// Printing the output deposit operation 
+		System.out.println("your amount is deposited");
+		System.out.println("Now your account balance is: " + Accountbalance);
+	}
+    // Creating the cheackbalance method
+	public static void cheackbalance(int Accountbalance) {
+		// Printing the account balance
+		System.out.println(" Your account balance is: " + Accountbalance);
+	}
+}

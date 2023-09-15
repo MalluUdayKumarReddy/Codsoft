@@ -1,0 +1,75 @@
+package gradecalculcatorproject;
+
+import java.util.Scanner;
+
+public class GradeCalculator {
+
+	public static void main(String[] args) {
+		// Creating the object of scanner class
+		Scanner scan = new Scanner(System.in);
+		// Asking the user the enter the number of subjects in semester
+		System.out.println("Enter the number of subjects in semester");
+		// Storing the total number subjects in variable
+		int totalsubjects = scan.nextInt();
+		// Creating an array
+		int arr[] = new int[totalsubjects];
+		// For loop using the asking the marks in subjects
+		for (int i = 0; i <= arr.length - 1; i++) {
+			System.out.println("enter the subject:" + (i + 1) + " marks");
+			// Storing marks in array
+			arr[i] = scan.nextInt();
+		}
+		// Initializing the values in sum variable
+		int sum = 0;
+		// For loop adding the all subject marks
+		for (int i = 0; i <= arr.length - 1; i++) {
+			sum = sum + arr[i];
+		}
+		// Calculate the average marks in all subjects
+		int average = sum / totalsubjects;
+		// if condition cheacking the marks less than 100 and greater than 90
+		if (average < 100 && average > 90) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is A+");
+		// else if condition cheacking the marks less than 89 and greater than 80
+		} else if (average < 89 && average > 80) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is A");
+		// else if condition cheacking the marks less than 79 and greater than 71	
+		} else if (average < 79 && average > 71) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is B+");
+		// else if condition cheacking the marks less than 70 and greater than 61
+		} else if (average < 70 && average > 61) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is B");
+		// else if condition cheacking the marks less than 60 and greater than 50
+		} else if (average < 60 && average > 50) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is C");
+		// else if condition cheacking the marks less than 89 and greater than 80
+		} else if (average < 49 && average > 40) {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is B");
+		// else condition all condition are flase else will be executed	
+		} else {
+			// Printing the student total marks and average and corresponding grade
+			System.out.println(" The Student Total Marks is :" + sum);
+			System.out.println(" The average is :" + average);
+			System.out.println(" The Corresponding Grade is FAIL");
+
+		}
+	}
+}

@@ -1,0 +1,74 @@
+package numberguessingtask1;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberguessingApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Creating object of scanner class
+		Scanner object = new Scanner(System.in);
+		// createing the object Random class to read the system random number
+		Random random = new Random();
+		boolean c = false;
+		do {
+			// Assignning random number into commaonguessnumber
+			int CommonGuessNumber = random.nextInt(100);
+			// Declaring variables with values
+			int UserGuessNumber = 0;
+			int NumberofGuesses = 1;
+			// Asking the user enter the guessing number between 1 t0 100
+			System.out.println("computer guessed a number between 1 to 100, try to guess");
+			// Creating the attempt variable
+			int attempt = 10;
+			// For loop using the iterating the condition until the true
+			for (int i = 0; i < 10; i++) {
+				// Asking the user enter the user guess number
+				UserGuessNumber = object.nextInt();
+				// Cheacking the condition if user guess number and common guess number equal
+				// and then print the output
+				if (UserGuessNumber == CommonGuessNumber) {
+					// Printing the output of guessing number and score and again you want to play
+					// game again enter o otherwise enter 1 for exit.
+					System.out.println(" Your guess is correct, your score is : " + (10 - i));
+					System.out.println("Do you want to play this game again. please enter '0' for Yes, and '1' for No");
+					int c1 = object.nextInt();
+					// restart the program condition cheacking
+					if (c1 == 0) {
+						c = true;
+					} else {
+						c = false;
+					}
+					break;
+				}
+				// Cheacking the condition if user guess number less than common guess number
+				else if (UserGuessNumber < CommonGuessNumber) {
+					// Printing the output of your value
+					System.out.println("your guess is LOW than the number:" + UserGuessNumber);
+					attempt -= 1;
+				} else {
+					// Printing the output of your value
+					System.out.println(" your guess is HIGH than number:" + UserGuessNumber);
+					attempt -= 1;
+				}
+			}
+			// if condition cheacking the attempt value
+			if (attempt == 0) {
+				// Printing the gameover and attempt and if you want to play again game enter 0
+				// otherwise enter 1 for exit.
+				System.out.println(" Game is over. you are out of attempt.");
+				System.out.println(" Do you want to play this game again. please enter '0' for Yes, and '1' for No ");
+				// Asking the user enter the value of c1
+				int c1 = object.nextInt();
+				// Cheacking the condition
+				if (c1 == 0) {
+					c = true;
+				} else {
+					c = false;
+				}
+			}
+		} while (c);
+	}
+
+}
